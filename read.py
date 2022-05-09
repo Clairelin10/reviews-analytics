@@ -21,3 +21,22 @@ for d in data:
     if len(d) > 300:
         new.append(d)
 print('總共有', len(new), '筆資料留言數字大於300')
+#找出留言中有good的留言
+
+# good = []
+#     for d in data:
+#         if 'good' in d:
+#         good.append(d)
+# print('一共有', len(good), '筆留言提到good')
+
+# list comprehensive 一行快寫法
+good =[d for d in data if 'good' in d]
+print('一共有', len(good), '筆留言提到good')
+
+#也可以不存入d到good清單，而是以Yes, 1 or true取而代之
+bad = ['bad' in d for d in data]
+print (bad[0], bad[1], bad[2])
+#以下三行，等於上面的快寫
+bad = []
+for d in data:
+    bad.append('bad' in d)
